@@ -1,5 +1,9 @@
 import signal
 import time
+import sys
+
+# Lai konsolē drukājot tekstu strādātu garumzīmes
+sys.stdout.reconfigure(encoding='utf-8')
 
 def shutdown(sig, frame):
     print('Ctrl+c strādā')

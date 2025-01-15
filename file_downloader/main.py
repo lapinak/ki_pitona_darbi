@@ -1,5 +1,9 @@
 import urllib.request
 import signal
+import sys
+
+# Lai konsolē drukājot tekstu strādātu garumzīmes
+sys.stdout.reconfigure(encoding='utf-8')
 
 def shutdown(sig, frame):
     print("Faila lejupielāde apturēta")

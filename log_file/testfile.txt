@@ -1,0 +1,19 @@
+Jan 15 10:24:30 hostname kernel: [  123.456789] usb 1-1: new high-speed USB device number 5 using xhci_hcd
+Jan 15 10:24:31 hostname kernel: [  123.987654] usb 1-1: New USB device found, idVendor=0781, idProduct=5567
+Jan 15 10:24:31 hostname kernel: [  123.987654] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Jan 15 10:24:31 hostname kernel: [  123.987654] usb 1-1: Product: Cruzer Blade
+Jan 15 10:24:31 hostname kernel: [  123.987654] usb 1-1: Manufacturer: SanDisk
+Jan 15 10:25:01 hostname systemd: Starting Daily Cleanup of Temporary Directories...
+Jan 15 10:25:01 hostname systemd: Finished Daily Cleanup of Temporary Directories.
+Jan 15 10:25:15 hostname kernel: [  145.876432] usb 2-2: USB disconnect, device number 7
+Jan 15 10:26:00 hostname sshd[5432]: Accepted password for user1 from 192.168.1.10 port 54822 ssh2
+Jan 15 10:27:15 hostname kernel: [  160.543210] usb 3-4: new SuperSpeed USB device number 9 using xhci_hcd
+Jan 15 10:27:15 hostname kernel: [  160.543210] usb 3-4: New USB device found, idVendor=046d, idProduct=082d
+Jan 15 10:27:15 hostname kernel: [  160.543210] usb 3-4: Product: HD Pro Webcam C920
+Jan 15 10:27:15 hostname kernel: [  160.543210] usb 3-4: Manufacturer: Logitech
+Jan 15 10:28:00 hostname cron[1234]: (root) CMD (run-parts /etc/cron.hourly)
+Jan 15 10:28:30 hostname kernel: [  190.876543] usb 1-1: USB device not accepting address 9, error -32
+Jan 15 10:29:45 hostname kernel: [  205.765432] usb-storage 1-1:1.0: USB Mass Storage device detected
+Jan 15 10:30:12 hostname kernel: [  230.654321] usb 1-2: USB suspend operation completed successfully
+Jan 15 10:31:00 hostname systemd: Reached target Sleep.
+Jan 15 10:31:01 hostname kernel: [  245.876543] usb 2-3: USB resume completed
