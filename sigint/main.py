@@ -2,16 +2,16 @@ import signal
 import time
 
 def shutdown(sig, frame):
-    print('Signal received. Exiting gracefully...')
+    print('Ctrl+c strādā')
     exit(0)
 
 signal.signal(signal.SIGINT, shutdown)
 
-print('Running... Press Ctrl+C to exit')
+print('Ctrl+c, lai izietu')
 
 try:
     while True:
-        print('Working...')
+        print('Strādā...')
         time.sleep(1)
 except KeyboardInterrupt:
-    print('Exception caught! Program crashed!')
+    print('Ja šis parādās, tad kaut kas nav pareizi!')
