@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import sys
 
-# Lai konsolē drukājot tekstu strādātu garumzīmes
+# Outputā kaut kas mēdz neiet ar garum/mīkstinājuma zīmēm
 sys.stdout.reconfigure(encoding='utf-8')
 
 compiled = []
