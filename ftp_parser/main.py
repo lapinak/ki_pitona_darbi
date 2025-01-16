@@ -65,4 +65,4 @@ for i in range(3):
 for t in threads:
     t.join()
 
-print("\nViss")
+print("\nVajadzētu būt, ka viss")
