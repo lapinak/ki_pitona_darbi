@@ -1,4 +1,4 @@
-Programma izvada failus, kas atrodas direktorijā, norādot arī info par failiem.
+### Programma izvada failus, kas atrodas direktorijā, norādot arī info par failiem.
 30.rindiņā nepieciešams ievadīt ceļu/path, lai kods darbotos. 
 
 Piemērs no izvades terminālī, ja tiek norādīts ceļš līdz threading mapei:
