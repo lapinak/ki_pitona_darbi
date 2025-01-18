@@ -1,4 +1,4 @@
-### SIGNIN uzdevums
+### SIGNINT uzdevums
 
 Programma veic *while* ciklu, kas darbojas mūžīgi, lai to pārtrauktu, programma gaida CTRL+C ievadi. Gadījumā, ja kaut kas tomēr nav korekti ir arī Exception bloks.
 Piemērs no termināļa: 
