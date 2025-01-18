@@ -8,7 +8,7 @@ def list_files_hierarchically(directory, indent=0):
         if entry.is_dir(follow_symlinks=False):
             list_files_hierarchically(entry.path, indent + 1)
         else:
-            print_file_stats(entry.path, indent + 1)
+            print_file_stats(entry.path, indent)
 
 def print_file_stats(filepath, indent):
 
@@ -18,16 +18,16 @@ def print_file_stats(filepath, indent):
         ctime = time.ctime(stats.st_ctime)
         mtime = time.ctime(stats.st_mtime)
         #Ja ķepiņās pamaina zīmi, tas pamaina indent izskatu, smukāk vispār bija ar atstarpēm un | zīmi
-        print("-" * indent + f"[Faila izmērs: {size}")
-        print("-" * indent + f"Izveidots: {ctime}")
-        print("-" * indent + f"Mainīts: {mtime}]")
+        print(" " * indent + f"[Faila izmērs: {size}")
+        print(" " * indent + f"Izveidots: {ctime}")
+        print(" " * indent + f"Mainīts: {mtime}]")
     except FileNotFoundError:
         print("-" * indent + "Fails nav atrasts")
     except PermissionError:
         print("-" * indent + "Pieeja liegta")
 
 #Šeit path uz directory
-root_directory = ""
+root_directory = "C:\\Users\\User\\Documents\\GitHub\\ki_pitona_darbi\\threading"
 
 if os.path.isdir(root_directory):
     print(f"Faili '{root_directory}':")
