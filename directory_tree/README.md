@@ -2,6 +2,8 @@ Programma izvada failus, kas atrodas direktorijā, norādot arī info par failie
 30.rindiņā nepieciešams ievadīt ceļu/path, lai kods darbotos. 
 
 Piemērs no izvades terminālī, ja tiek norādīts ceļš līdz threading mapei:
+
+```bash
 apmacibu_apmeklejums
 -apmacibasOKT1524.xlsx
  [Faila izmērs: 10333
@@ -25,3 +27,4 @@ main.py
 [Faila izmērs: 1773
 Izveidots: Tue Jan 14 22:46:12 2025
 Mainīts: Thu Jan 16 11:13:39 2025]
+```
