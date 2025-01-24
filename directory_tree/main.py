@@ -42,7 +42,7 @@ def print_file_stats(filepath, indent):
         logging.critical("-" * indent + "Pieeja liegta")
 
 #Šeit path uz directory
-root_directory = "C:\\Users\\User\\Documents\\GitHub\\ki_pitona_darbi\\threading"
+root_directory = ""
 
 if os.path.isdir(root_directory):
     print(f"Faili '{root_directory}':")
