@@ -4,7 +4,9 @@ Tiek apskatīti Excel faili, kas glabājas 58.rindiņas norādītajā mapē. No 
 
 Piemērs no termināļa:
 ```bash
-Thread pabeigts 0.222 sekundēs
-Thread pabeigts 0.230 sekundēs
-Excel fails sagatavots
+2025-01-24 20:23:19,398 - INFO - Thread pabeigts 1.056 sekundēs
+2025-01-24 20:23:19,408 - INFO - Thread pabeigts 1.064 sekundēs
+2025-01-24 20:23:19,479 - INFO - Excel fails sagatavots
 ```
+
+Log faila izraksts saglabāts pie failiem.

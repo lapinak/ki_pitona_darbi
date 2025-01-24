@@ -2,9 +2,24 @@ from scapy.all import *
 #from scapy.layers.inet import IP, TCP
 import multiprocessing
 import signal
+import logging
+
+# Logging konfigurācija
+logging.basicConfig(
+    # INFO līmenis
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        #Pieglabā failā, lai izskatās 'nopietnāk'
+        logging.FileHandler("processing.log", mode="w", encoding="utf-8"),
+        #Konsoles izdrula
+        logging.StreamHandler()
+    ]
+)
 
 #Lai var pārtraukt programmu
 def shutdown(sig, frame):
+    logging.info("Pārtraukts ar lietotāja ievadi")
     exit(0)
 
 signal.signal(signal.SIGINT, shutdown)
@@ -17,20 +32,20 @@ def port_scanning(ip_address, port):
     syn_packet = IP(dst=ip_address)/TCP(sport=RandShort(), dport=port, flags="S")
     
     try:
-        print(f"Scanning port {port} on {ip_address}")
+        logging.info(f"Scanning port {port} on {ip_address}")
         #Gaida atbildi par nosūtīto pakotni
         response = sr1(syn_packet, timeout=2, verbose=False)
         
         #Iegūtās atbildes 0x12 - atvērts ports, 0x14 - aizvērts ports
         if response and response.haslayer(TCP):
             if response.getlayer(TCP).flags == 0x12:
-                print(f"Ports {port} strādā")
+                logging.info(f"Ports {port} strādā")
             elif response.getlayer(TCP).flags == 0x14:
-                print(f"Ports {port} ir aizvērts")     
+                logging.info(f"Ports {port} ir aizvērts")     
         else:
-            print(f"Ports {port} neatbild.")
+            logging.info(f"Ports {port} neatbild.")
     except Exception as e:
-        print(f"Kļūda ar portu {port}: {e}")
+        logging.error(f"Kļūda ar portu {port}: {e}")
 
 def scan(ip_address, port_range):
     
@@ -47,4 +62,4 @@ if __name__ == "__main__":
     port_range = range(20, 500) 
     
     scan(ip_address, port_range)
-    print("Uzd.pabeigts")
+    logging.info("Uzd.pabeigts")

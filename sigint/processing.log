@@ -1,15 +1,6 @@
-### SIGNIN uzdevums
-
-Programma veic *while* ciklu, kas darbojas mūžīgi, lai to pārtrauktu, programma gaida CTRL+C ievadi. Gadījumā, ja kaut kas tomēr nav korekti ir arī Exception bloks.
-Piemērs no termināļa: 
-
-```bash
 2025-01-24 20:40:22,670 - INFO - Ctrl+c, lai izietu
 2025-01-24 20:40:22,671 - INFO - Strādā...
 2025-01-24 20:40:23,672 - INFO - Strādā...
 2025-01-24 20:40:24,674 - INFO - Strādā...
 2025-01-24 20:40:25,677 - INFO - Strādā...
 2025-01-24 20:40:25,939 - WARNING - Ctrl+c strādā, programmu apstādināja lietotājs
-```
-
-Log faila izraksts saglabāts pie failiem.

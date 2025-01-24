@@ -1,0 +1,32 @@
+2025-01-24 20:37:23,786 - INFO - Thread-1 Pārbauda ftp.dlptest.com
+2025-01-24 20:37:23,787 - INFO - Thread-2 Pārbauda speedtest.tele2.net
+2025-01-24 20:37:23,788 - INFO - Thread-3 Pārbauda ftp.ubuntu.com
+2025-01-24 20:37:24,281 - INFO - 
+Thread-3 Pabeidza ftp.ubuntu.com:
+2025-01-24 20:37:24,328 - INFO - Thread-3 Pārbauda ftp.gnu.org
+2025-01-24 20:37:24,865 - ERROR - 
+Thread-2 error speedtest.tele2.net: 530 Permission denied.
+2025-01-24 20:37:24,867 - INFO - Thread-2 Pārbauda ftp.mozilla.org
+2025-01-24 20:37:25,286 - INFO - 
+Thread-3 Pabeidza ftp.gnu.org:
+2025-01-24 20:37:25,402 - INFO - Thread-3 Pārbauda ftp.funet.fi
+2025-01-24 20:37:25,919 - INFO - 
+Thread-3 Pabeidza ftp.funet.fi:
+2025-01-24 20:37:25,949 - INFO - Thread-3 Pārbauda ftp.sunet.se
+2025-01-24 20:37:26,310 - INFO - 
+Thread-3 Pabeidza ftp.sunet.se:
+2025-01-24 20:37:26,340 - INFO - Thread-3 Pārbauda ftp.freebsd.org
+2025-01-24 20:37:26,848 - INFO - 
+Thread-3 Pabeidza ftp.freebsd.org:
+2025-01-24 20:37:26,881 - INFO - Thread-3 Pārbauda ftp.debian.org
+2025-01-24 20:37:27,740 - ERROR - 
+Thread-1 error ftp.dlptest.com: 530 Login incorrect.
+2025-01-24 20:37:27,742 - INFO - Thread-1 Pārbauda ftp.tu-chemnitz.de
+2025-01-24 20:37:28,224 - INFO - 
+Thread-1 Pabeidza ftp.tu-chemnitz.de:
+2025-01-24 20:37:34,919 - ERROR - 
+Thread-2 error ftp.mozilla.org: timed out
+2025-01-24 20:37:36,913 - ERROR - 
+Thread-3 error ftp.debian.org: timed out
+2025-01-24 20:37:37,926 - INFO - 
+Vajadzētu būt, ka viss

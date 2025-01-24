@@ -1,6 +1,20 @@
 import threading
 import ftplib
 import queue
+import logging
+
+# Logging konfigurācija
+logging.basicConfig(
+    # INFO līmenis
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        #Pieglabā failā, lai izskatās 'nopietnāk'
+        logging.FileHandler("processing.log", mode="w", encoding="utf-8"),
+        #Konsoles izdrula
+        logging.StreamHandler()
+    ]
+)
 
 #Saraksts ar FTP saitēm
 sites = [
@@ -25,7 +39,7 @@ def check_ftp(work_queue, results):
             break
 
         thread_name = threading.current_thread().name
-        print(f"{thread_name} Pārbauda {site}")
+        logging.info(f"{thread_name} Pārbauda {site}")
 
         try:
             ftp = ftplib.FTP()
@@ -42,7 +56,7 @@ def check_ftp(work_queue, results):
             top_files = files[:5]
             results[site] = top_files
 
-            print(f"\n{thread_name} Pabeidza {site}:")
+            logging.info(f"\n{thread_name} Pabeidza {site}:")
             for file in top_files:
                 print(f"  {file}")
 
@@ -50,7 +64,7 @@ def check_ftp(work_queue, results):
             
         except Exception as e:
             results[site] = f"Error: {e}"
-            print(f"\n{thread_name} error {site}: {e}")
+            logging.error(f"\n{thread_name} error {site}: {e}")
 
 
 work_queue = queue.Queue()
@@ -70,4 +84,4 @@ for i in range(3):
 for t in threads:
     t.join()
 
-print("\nVajadzētu būt, ka viss")
+logging.info("\nVajadzētu būt, ka viss")

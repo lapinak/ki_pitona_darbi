@@ -3,9 +3,23 @@ import threading
 import pandas as pd
 import time
 import sys
+import logging
 
 # Outputā kaut kas mēdz neiet ar garum/mīkstinājuma zīmēm
 sys.stdout.reconfigure(encoding="utf-8")
+
+# Logging konfigurācija
+logging.basicConfig(
+    # INFO līmenis
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        #Pieglabā failā, lai izskatās 'nopietnāk'
+        logging.FileHandler("processing.log", mode="w", encoding="utf-8"),
+        #Konsoles izdrula
+        logging.StreamHandler()
+    ]
+)
 
 compiled = []
 lock = threading.Lock()
@@ -24,9 +38,9 @@ def process_excel(file_path):
             compiled.append(processed_dataset)
             end_time = time.time()
             avg_time = end_time - start_time
-            print(f"Thread pabeigts {avg_time:.3f} sekundēs")
+            logging.info(f"Thread pabeigts {avg_time:.3f} sekundēs")
     except Exception as e:
-        print(f"Kļūda velkot globālo sarakstu {file_path}: {e}")
+        logging.error(f"Kļūda velkot globālo sarakstu {file_path}: {e}")
 
 def main(input_dir, output_file):
 
@@ -34,7 +48,7 @@ def main(input_dir, output_file):
     excel_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir)]
 
     if not excel_files:
-        print("Tukša mape")
+        logging.warning("Tukša mape")
         return
 
     threads = []
@@ -50,7 +64,7 @@ def main(input_dir, output_file):
 
     # Saglabā gala Excelī
     combined_dataset.to_excel(output_file, index=False)
-    print("Excel fails sagatavots")
+    logging.info("Excel fails sagatavots")
 
 #Jānorāda avota mapīte un gala fails
 if __name__ == "__main__":

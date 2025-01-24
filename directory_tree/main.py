@@ -1,5 +1,20 @@
 import os
 import time
+import logging
+
+# Logging konfigurācija
+logging.basicConfig(
+    # INFO līmenis
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        #Pieglabā failā, lai izskatās 'nopietnāk'
+        logging.FileHandler("processing.log", mode="w", encoding="utf-8"),
+        #Konsoles izdrula
+        logging.StreamHandler()
+    ]
+)
+
 
 def list_files_hierarchically(directory, indent=0):
     
@@ -22,15 +37,15 @@ def print_file_stats(filepath, indent):
         print(" " * indent + f"Izveidots: {ctime}")
         print(" " * indent + f"Mainīts: {mtime}]")
     except FileNotFoundError:
-        print("-" * indent + "Fails nav atrasts")
+        logging.error("-" * indent + "Fails nav atrasts")
     except PermissionError:
-        print("-" * indent + "Pieeja liegta")
+        logging.critical("-" * indent + "Pieeja liegta")
 
 #Šeit path uz directory
-root_directory = ""
+root_directory = "C:\\Users\\User\\Documents\\GitHub\\ki_pitona_darbi\\threading"
 
 if os.path.isdir(root_directory):
     print(f"Faili '{root_directory}':")
     list_files_hierarchically(root_directory)
 else:
-    print(f"Error: '{root_directory}' Windows ir nolādēts :) .")
+    logging.error(f"Error: '{root_directory}' Windows ir nolādēts :) .")
