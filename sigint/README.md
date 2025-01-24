@@ -1,4 +1,4 @@
-### SIGNIN uzdevums
+### SIGNINT uzdevums
 
 Programma veic *while* ciklu, kas darbojas mūžīgi, lai to pārtrauktu, programma gaida CTRL+C ievadi. Gadījumā, ja kaut kas tomēr nav korekti ir arī Exception bloks.
 Piemērs no termināļa: 
@@ -11,5 +11,3 @@ Piemērs no termināļa:
 2025-01-24 20:40:25,677 - INFO - Strādā...
 2025-01-24 20:40:25,939 - WARNING - Ctrl+c strādā, programmu apstādināja lietotājs
 ```
-
-Log faila izraksts saglabāts pie failiem.
